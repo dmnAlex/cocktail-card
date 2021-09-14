@@ -4,10 +4,13 @@ import cocktailService from '../../services/cocktails'
 import CocktailItem from '../CocktailItem'
 
 const CocktailList = () => {
-  const [cocktails, setCocktails] = useState()
+  const [cocktails, setCocktails] = useState(null)
 
   useEffect(() => {
-    cocktailService.getList().then(data => setCocktails(data))
+    cocktailService
+      .getList()
+      .then(data => setCocktails(data))
+      .catch(error => console.log(error.message))
   }, [])
 
   const handleLike = (id) => {
@@ -37,11 +40,16 @@ const CocktailList = () => {
         <Card.Group itemsPerRow={5}>
           {cocktails.map(
             cocktail =>
-              <CocktailItem
-                cocktail={cocktail}
-                key={cocktail.id}
-                handleLike={handleLike}
-              />)
+              cocktail
+                ? (
+                  <CocktailItem
+                    cocktail={cocktail}
+                    key={cocktail.id}
+                    handleLike={handleLike}
+                  />
+                )
+                : null
+          )
           }
         </Card.Group>
       )
