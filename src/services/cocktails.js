@@ -4,8 +4,9 @@ const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1'
 const getList = async () => {
   const response = await axios.get(`${baseUrl}/filter.php?c=Cocktail`)
   const cocktails = response.data.drinks.map(item => createListItem(item))
+  const result = await Promise.all(cocktails)
 
-  return await Promise.all(cocktails)
+  return result
 }
 
 const createListItem = async (item) => {
