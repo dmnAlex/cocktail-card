@@ -8,11 +8,11 @@ To run the project:
 
 ### `git clone https://github.com/dmnAlex/cocktail-card`
 
-To clone to your local machine
+Clones repo to your local machine
 
 ### `npm install`
 
-To install dependencies
+Installs dependencies
 
 ### `npm start`
 Runs the app in the development mode.\
@@ -28,7 +28,7 @@ In the project directory, you can run:
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.\
 (currently no test are present)
 
 ### `npm run build`
